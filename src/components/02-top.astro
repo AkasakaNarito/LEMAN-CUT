@@ -2,19 +2,209 @@
 
 
 <div class="top">
-    <div class="top-image">
-        <img src="top-image.png" alt="Top Image">
-    </div>
-    <div class="top-content">
-        <div class="blueRectangle"></div>
-        <div class="top-text">
-            <div class="top-text-content">LEMANCUT</div>
-        </div>
-    </div>
-    <div class="top-content2">
-        <div class="top-text2-content">散髪に素早さを求める<div class="top-text2-rectangle"></div></div>
-        <div class="top-text2-content">サラリーマンの人々へ<div class="top-text2-rectangle"></div></div>
 
+    <div class="top-layout">
+        <div class="top-image">
+            
+        </div>
+        <div class="blueRectangle">
+            
+        </div>
+        <div class="top-text">
+            <div class="top-text-holder"><p class="top-text-content">LEMANCUT</p></div>
+        </div>
+
+        <div class="menu">
+            
+            <div class="humburgerMenu">
+                <div class="humburgerMenu1"></div>
+                <div class="humburgerMenu2"></div>
+                <div class="humburgerMenu3"></div>
+            </div>
+        
+        </div>
+
+        <div class="top-content">
+                <div class="top-content-text">散髪に素早さを求める<div class="top-content-rectangle"></div></div>
+                <div class="top-content-text2">サラリーマンの人々へ<div class="top-content-rectangle2"></div></div>
+        </div>
+
+        
     </div>
+
+    
+    
     
 </div>
+
+<style>
+
+    .top {
+        grid-column: 1 / -1;
+        display:grid;
+        grid-template-columns:minmax(7rem, 1fr) minmax(auto, 2000px) minmax(0,1fr) ;
+    }
+
+    
+
+    .top-layout {
+        display:flex;
+        height:calc(100vh - var(--header-height));
+        position:relative;
+        grid-column: 2;
+    }
+
+    /* .top-layout:nth-child(2) {
+        transform:translate(0, 50px);
+    } */
+    
+    .top-image {
+        flex:0 0 40%;
+        height:100%;
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+        background-image:url("../images/top-image2.png");
+        background-position:center 35%;
+        background-repeat: no-repeat;
+        background-size:200%;
+        transform:translateX(5%);
+        z-index:2;
+        max-width:600px;
+    }
+
+    
+    
+    .blueRectangle  {
+        flex:2;
+        background-color:var(--Main-color);
+        transform:translateY(calc(var(--header-height) * -1));
+        height: calc(100vh - var(--header-height) + var(--header-height));
+        z-index:1;
+        
+    }
+
+    .top-text  {
+        flex:1;
+        width:100%;
+        height:100%;
+        transform: translateY(calc(var(--header-height) * -1));
+        height: calc(100vh - var(--header-height) + var(--header-height));
+    }
+
+    .top-text .top-text-holder {
+            width:100%;
+            height:100%;
+            position:relative;
+            overflow:hidden;
+            
+    }
+
+    .top-text .top-text-content {
+            /* background-color:aqua; */
+            text-align:center;
+            color:var(--Main-color);
+            font-family:var(--Font-family-en);
+            font-size:12rem;
+            letter-spacing:-0.05em;
+            position:absolute;
+            top:0%;
+            left:50%;
+            writing-mode: vertical-rl;
+            transform:translate(-50%,0) ;
+    }
+
+
+    .menu  {
+        flex:0 0 7.5rem;
+        background-color:var(--Main-color);
+        transform:translateY(calc(var(--header-height) * -1));
+        height: calc(100vh - var(--header-height) + var(--header-height));
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 98%, 0 92%);
+    }
+
+    .humburgerMenu {
+        width:80%;
+        height:5%;
+        margin:20% auto 0;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        cursor:pointer;
+    }
+
+    .humburgerMenu1 {
+        width:100%;
+        height:5px;
+        background-color:white;
+
+    }
+
+    .humburgerMenu2 {
+        width:100%;
+        height:5px;
+        background-color:white;
+
+    }
+
+    .humburgerMenu3 {
+        width:100%;
+        height:5px;
+        background-color:white;
+
+    }
+
+    .top-content {
+        position:absolute;
+        top:55%;
+        left:8%;
+        z-index:3;
+        color:var(--Base-color);
+    }
+
+    .top-content-text {
+        font-size:5.62rem;
+        font-weight:bold;
+        text-shadow:0 4px 4px rgba(0,0,0,0.75);
+        position:relative;
+    }
+
+    .top-content-text2 {
+        font-size:5.62rem;
+        font-weight:bold;
+        text-shadow:0 4px 4px rgba(0,0,0,0.75);
+        position:relative;
+    }
+
+    .top-content-rectangle {
+        width:100%;
+        height:77px;
+        background-color:var(--Accent-color2);
+        position:absolute;
+        top:0;
+        left:0;
+        transform:translateY(80%);
+        z-index:-1;
+    }
+
+    .top-content-rectangle2 {
+        width:100%;
+        height:77px;
+        background-color:var(--Accent-color2);
+        position:absolute;
+        top:0;
+        left:0;
+        transform:translateY(80%);
+        z-index:-1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+   
+</style>

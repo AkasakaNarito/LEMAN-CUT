@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import Stylist01 from '../images/01-stylist.png';
+import Stylist02 from '../images/02-stylist.png';
+import Stylist03 from '../images/03-stylist.png';
+import Stylist04 from '../images/04-stylist.png';
+import Stylist05 from '../images/05-stylist.png';
+---
+
+
+
+<div class="section">
+    <div class="section-content">
+        <div class="content-text">
+            <div class="title"><h1 class="title-content">STYLEST</h1><div class="title-rectangle"></div></div>
+            <div class="sub-title"><p class="sub-title-content">ビジネスシーンをしりつくした<br>プロフェッショナル達が集結。</p></div>
+        </div>
+        <div class="content-img">
+            <div class="stylist-img">
+                <Image src={Stylist01} alt="美容師" />
+            </div>
+            <div class="stylist-img">
+                <Image src={Stylist02} alt="美容師" />
+            </div>
+            <div class="stylist-img">
+                <Image src={Stylist03} alt="美容師" />
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<style>
+    .section {
+        grid-column: 1 / -1;
+        display:grid;
+        grid-template-columns: subgrid;
+        
+        background-color:var(--Main-color);
+    }
+
+    .section-content {
+        grid-column: 2;
+        padding:var(--PC-top-padding) 8%;
+    }
+
+    .content-text {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    
+
+    .title {
+        position:relative;
+        isolation: isolate;
+    }
+
+    .title-content {
+        font-family:var(--Font-family-en);
+        font-size:var(--PC-Title-font-size);
+        font-weight:bold;
+        color:var(--Base-color);
+        
+    }
+
+    .title-rectangle {
+        width:100%;
+        height:40px;
+        background:linear-gradient(to right, #F29D48,#EA8017);
+        position:absolute;
+        bottom:0;
+        left:0;
+        z-index:-1;
+    }
+
+    .sub-title-content {
+        color:var(--Base-color);
+        font-size:2.25rem;
+        font-family:var(--Font-family-jp);
+        font-weight:bold;
+        padding-top:15px;
+    }
+
+    .content-img {
+        display:flex;
+        justify-content:space-between;
+        margin-top:100px;
+    }
+
+    .stylist-img {
+        width:300px;
+        height:450px;
+    }
+
+    .content-img img {
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:65% 0;
+        border-radius:5px;
+    }
+</style>
